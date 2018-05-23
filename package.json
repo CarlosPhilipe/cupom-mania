@@ -1,0 +1,26 @@
+{
+  "name": "cupom-mania",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon",
+    "production": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosPhilipe/cupom-mania.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosPhilipe/cupom-mania/issues"
+  },
+  "homepage": "https://github.com/CarlosPhilipe/cupom-mania#readme",
+  "dependencies": {
+    "mysql2": "^1.5.3",
+    "nodemon": "^1.17.4",
+    "sequelize": "^4.37.8"
+  }
+}
