@@ -2,7 +2,7 @@ const express	= require('express');
 
 const estabelecimento = require('./controller/estabelecimento/');
 // Acessível dentro da pasta controller
-// const cliente = require('controller/cliente/');
+const cliente = require('./controller/cliente/');
 // const usuario  		  = require('../api/controller/usuarios/');
 // const promocao 		  = require('../api/controller/promocoes/');
 // const cupom 		  = require('../api/controller/cupons/');
@@ -22,10 +22,10 @@ module.exports = function (server, connection) {
 
 	// estabelecimento
 	server.post('/estabelecimento', estabelecimento.novo);
-	// server.get('/estabelecimento', estabelecimento.buscarTodos);
-	// server.get('/estabelecimento/:id', estabelecimento.buscar);
-	// server.put('/estabelecimento/:id', estabelecimento.alterar);
-	// server.delete('/estabelecimento/:id', estabelecimento.excluir);
+	server.get('/estabelecimento', estabelecimento.buscarTodos);
+	server.get('/estabelecimento/:id', estabelecimento.buscar);
+	server.put('/estabelecimento/:id', estabelecimento.alterar);
+	server.delete('/estabelecimento/:id', estabelecimento.excluir);
 
 	//Utilizado para validação
 	// server.use('/api', auth.passport.authenticate('jwt', { session: false }), router);
@@ -41,7 +41,7 @@ module.exports = function (server, connection) {
   // server.post('/login', usuario.login);
 
 	// // cliente
-	// server.post('/:key/cliente', cliente.novo);
+	server.post('/:key/cliente', cliente.novo);
 	// server.get('/:key/cliente', cliente.buscarTodos);
 	// server.get('/:key/cliente/:id', cliente.buscar);
 	// server.put('/:key/cliente/:id', cliente.alterar);

@@ -1,10 +1,11 @@
 // CHAMADA ao mecanismo de conexão
-const Estabelecimento = require('../../model/Estabelecimento');
+const Cliente = require('../../model/Cliente');
 // método chamado do get com patrametro
 module.exports = function buscar(req, res) {
-        Estabelecimento.findOne({
+
+        Cliente.findOne({
           where: {
-            idestabelecimento: req.params.id
+            idcliente: req.params.id
           }
         }).then(result => {
             res.send(result);

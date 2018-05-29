@@ -1,21 +1,16 @@
 // CHAMADA ao mecanismo de conexão
-const Estabelecimento = require('../../model/Estabelecimento');
+const Cliente = require('../../model/Cliente');
 // método chamado no update dados do cliente
 module.exports = function alterar(req, res) {
-  Estabelecimento.update({
+  Cliente.update({
     nome: req.body.nome,
-    logo: req.body.logo,
-    cep: req.body.cep,
-    bairro: req.body.bairro,
-    rua: req.body.rua,
-    numero: req.body.numero,
-    complemento: req.body.complemento,
     email: req.body.email,
     senha: req.body.senha,
-    ativo: true
+    ativo: true,
+    estabelecimento_idestabelecimento: req.body.idestabelecimento
   },{
     where: {
-      idestabelecimento: req.params.id
+      idcliente: req.params.id
     }
   }
 ).then(result => {

@@ -26,6 +26,15 @@ const Estabelecimento = connection.define('estabelecimento', {
     },
     logo: {
       type: Sequelize.STRING(45)
+    },
+    email: {
+      type: Sequelize.STRING(45)
+    },
+    senha: {
+      type: Sequelize.STRING(45)
+    },
+    ativo: {
+      type: Sequelize.BOOLEAN
     }
 },{
   timestamps: false

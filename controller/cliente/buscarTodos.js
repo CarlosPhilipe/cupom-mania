@@ -1,10 +1,10 @@
 // CHAMADA ao mecanismo de conexão
-const Estabelecimento = require('../../model/Estabelecimento');
+const Cliente = require('../../model/Cliente');
 // método chamado no get de todos os clientes
 module.exports = function buscarTodos(req, res) {
-    Estabelecimento.findAll({
+    Cliente.findAll({
       where: {
-        ativo: true
+        idestabelecimento: 1
       }
     }).then(result => {
         res.send(result);

@@ -1,7 +1,11 @@
 // CHAMADA ao mecanismo de conexão
-const { connection, Sequelize } = require('../database');
+const { connection, Sequelize } = require('../modules/database');
 //Model da classe cliente
-const Cliente = connection.define('clientes', {
+const Cliente = connection.define('cliente', {
+  idcliente: {
+      type: Sequelize.INTEGER,
+      primaryKey: true
+  },
   nome: {
     type: Sequelize.STRING(70)
   },
@@ -14,6 +18,14 @@ const Cliente = connection.define('clientes', {
   senha: {
     type: Sequelize.STRING(45)
   },
-);
+  estabelecimento_idestabelecimento: {
+    type: Sequelize.INTEGER
+  },
+  ativo: {
+      type: Sequelize.BOOLEAN
+  }
+},{
+  timestamps: false
+});
 
 module.exports = Cliente;

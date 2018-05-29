@@ -4,10 +4,6 @@ const Util = require('../../modules/Util');
 // método chamado no post do cliente
 // /estabelecimento
 module.exports = function novo(req, res) {
-    /*
-    Constroi o objeto;
-    depois salva;
-    */
     var key = Util().buildKeyFromName();
 
     Estabelecimento.build({
@@ -18,7 +14,10 @@ module.exports = function novo(req, res) {
       bairro: req.body.bairro,
       rua: req.body.rua,
       numero: req.body.numero,
-      complemento: req.body.complemento
+      complemento: req.body.complemento,
+      email: req.body.email,
+      senha: req.body.senha,
+      ativo: true
      })
     .save()
     .then(result => {
