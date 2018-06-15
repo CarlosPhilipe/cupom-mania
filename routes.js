@@ -4,7 +4,7 @@ const estabelecimento = require('./controller/estabelecimento/');
 // Acessível dentro da pasta controller
 const cliente = require('./controller/cliente/');
 // const usuario  		  = require('../api/controller/usuarios/');
-// const promocao 		  = require('../api/controller/promocoes/');
+const promocao = require('./controller/promocao/');
 // const cupom 		  = require('../api/controller/cupons/');
 
 module.exports = function (server, connection) {
@@ -49,11 +49,11 @@ module.exports = function (server, connection) {
 	//
 	//
 	// // promocoes
-	// server.post('/promocao', promocao.novo);
-	// server.get('/promocao', promocao.buscarTodos);
-	// server.get('/promocao/:id', promocao.buscar);
-	// server.put('/promocao/:id', promocao.alterar);
-	// server.delete('/promocao/:id', promocao.excluir);
+	server.post('/:key/promocao', promocao.novo);
+	server.get('/:key/promocao', promocao.buscarTodos);
+	server.get('/:key/promocao/:id', promocao.buscar);
+	server.put('/:key/promocao/:id', promocao.alterar);
+	server.delete('/:key/promocao/:id', promocao.excluir);
 	//
 	// // promocoes
 	// server.post('/cupom', cupom.novo);
