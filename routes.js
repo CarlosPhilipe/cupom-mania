@@ -42,10 +42,10 @@ module.exports = function (server, connection) {
 
 	// // cliente
 	server.post('/:key/cliente', cliente.novo);
-	// server.get('/:key/cliente', cliente.buscarTodos);
-	// server.get('/:key/cliente/:id', cliente.buscar);
-	// server.put('/:key/cliente/:id', cliente.alterar);
-	// server.delete('/:key/cliente/:id', cliente.excluir);
+	server.get('/:key/cliente', cliente.buscarTodos);
+	server.get('/:key/cliente/:id', cliente.buscar);
+	server.put('/:key/cliente/:id', cliente.alterar);
+	server.delete('/:key/cliente/:id', cliente.excluir);
 	//
 	//
 	// // promocoes

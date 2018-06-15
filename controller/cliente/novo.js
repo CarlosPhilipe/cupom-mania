@@ -16,18 +16,17 @@ module.exports = async function novo(req, res) {
         res.send(`{"mensagem":"erro","tipo":"${error}"}`);
     })
 
-
     Cliente.build({
       nome: req.body.nome,
       email: req.body.email,
       senha: req.body.senha,
+      ativo: true,
       estabelecimento_idestabelecimento: idestabelecimento
      })
     .save()
     .then(result => {
       // em caso de sucesso
-      console.log(result);
-      res.send(`{"mensagem":"ok","id":"${result}"}`);
+      res.send(`{"mensagem":"ok"}`);
     })
     .catch(error => {
       // em caso de erro
