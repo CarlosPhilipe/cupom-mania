@@ -5,7 +5,7 @@ const estabelecimento = require('./controller/estabelecimento/');
 const cliente = require('./controller/cliente/');
 // const usuario  		  = require('../api/controller/usuarios/');
 const promocao = require('./controller/promocao/');
-// const cupom 		  = require('../api/controller/cupons/');
+const cupom 		  = require('./controller/cupom/');
 
 module.exports = function (server, connection) {
 
@@ -56,7 +56,7 @@ module.exports = function (server, connection) {
 	server.delete('/:key/promocao/:id', promocao.excluir);
 	//
 	// // promocoes
-	// server.post('/cupom', cupom.novo);
+	server.post('/:key/cupom', cupom.novo);
 	// server.get('/cupom', cupom.buscarTodos);
 	// server.get('/cupom/:id', cupom.buscar);
 	// server.get('/cupom/:id/cliente', cupom.buscarPorCliente);
