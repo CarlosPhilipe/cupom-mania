@@ -25,7 +25,7 @@ module.exports = async function novo(req, res) {
     .save()
     .then(result => {
       // em caso de sucesso
-      res.send(`{"mensagem":"ok"}`);
+      res.send(`{"mensagem":"ok", "result":${result.id}}`);
     })
     .catch(error => {
       // em caso de erro

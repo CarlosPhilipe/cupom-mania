@@ -41,6 +41,7 @@ module.exports = function (server, connection) {
   // server.post('/login', usuario.login);
 
 	// // cliente
+	server.post('/:key/usuario', cliente.login);
 	server.post('/:key/cliente', cliente.novo);
 	server.get('/:key/cliente', cliente.buscarTodos);
 	server.get('/:key/cliente/:id', cliente.buscar);
