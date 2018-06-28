@@ -22,6 +22,7 @@ module.exports = function (server, connection) {
 
 	// estabelecimento
 	server.post('/estabelecimento', estabelecimento.novo);
+	server.post('/estabelecimento/login', estabelecimento.login);
 	server.get('/estabelecimento', estabelecimento.buscarTodos);
 	server.get('/estabelecimento/:id', estabelecimento.buscar);
 	server.put('/estabelecimento/:id', estabelecimento.alterar);
@@ -31,14 +32,6 @@ module.exports = function (server, connection) {
 	// server.use('/api', auth.passport.authenticate('jwt', { session: false }), router);
 
 	// server.get('/:key/teste/zonadetestes/:codigo', teste.zonadetestes);
-
-	// usuarios
-	// server.post('/usuario', usuario.novo);
-	// server.get('/usuario', usuario.buscarTodos);
-	// server.get('/usuario/:id', usuario.buscar);
-	// server.put('/usuario/:id', usuario.alterar);
-	// server.delete('/api/usuario/:id', usuario.excluir);
-  // server.post('/login', usuario.login);
 
 	// // cliente
 	server.post('/:key/usuario', cliente.login);

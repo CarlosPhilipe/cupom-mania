@@ -18,6 +18,7 @@ module.exports = async function buscarTodos(req, res) {
 
   Promocao.findAll({
     where: {
+      deletado: null,
       estabelecimento_idestabelecimento: idestabelecimento
     }
   })

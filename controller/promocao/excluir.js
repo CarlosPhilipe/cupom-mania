@@ -18,7 +18,7 @@ module.exports = async function excluir(req, res) {
   });
 
   Promocao.update({
-      ativo: false,
+      deletado: new Date().getTime(),
     },{
       where: {
         idpromocao: req.params.id,

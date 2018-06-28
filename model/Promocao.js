@@ -18,6 +18,9 @@ const Promocao = connection.define('promocao', {
     validade: {
       type: Sequelize.DATE
     },
+    deletado: {
+      type: Sequelize.DATE
+    },
     valor: {
       type: Sequelize.DOUBLE
     },
