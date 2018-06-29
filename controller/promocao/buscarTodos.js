@@ -17,6 +17,9 @@ module.exports = async function buscarTodos(req, res) {
   });
 
   Promocao.findAll({
+    order: [
+      ['idpromocao', 'DESC'],
+    ],
     where: {
       deletado: null,
       estabelecimento_idestabelecimento: idestabelecimento

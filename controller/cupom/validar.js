@@ -17,18 +17,29 @@ module.exports = async function excluir(req, res) {
       res.send(`{"mensagem":"erro","tipo":"${error}"}`);
   });
 
-  Cliente.update({
+  const idcupom = await Cupom.findOne({
+    where: {
+      numero_cupom: req.body.numero_cupom
+    }
+  }).then(result => {
+      if (! result) {
+          res.send(`{"mensagem":"cupom não encontrado","tipo":"cupom_nao_encontrado"}`);
+      }
+      return result.idcupom;
+  })
+  .catch(error => {
+      res.send(`{"mensagem":"erro","tipo":"${error}"}`);
+  });
+
+  Cupom.update({
       ativo: false,
     },{
       where: {
-        idcliente: req.params.id,
-        estabelecimento_idestabelecimento: idestabelecimento
+        idcupom: idcupom
       }
     }
   )
   .then(result => {
-    // em caso de sucesso
-    console.log(result)
     res.send(`{"mensagem":"ok"}`);
   })
   .catch(error => {

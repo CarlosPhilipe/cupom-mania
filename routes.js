@@ -51,6 +51,7 @@ module.exports = function (server, connection) {
 	//
 	// // promocoes
 	server.post('/:key/cupom', cupom.novo);
+	server.post('/:key/cupom/validar', cupom.validar);
 	// server.get('/cupom', cupom.buscarTodos);
 	// server.get('/cupom/:id', cupom.buscar);
 	// server.get('/cupom/:id/cliente', cupom.buscarPorCliente);
