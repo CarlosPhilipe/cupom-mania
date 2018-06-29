@@ -28,11 +28,6 @@ module.exports = function (server, connection) {
 	server.put('/estabelecimento/:id', estabelecimento.alterar);
 	server.delete('/estabelecimento/:id', estabelecimento.excluir);
 
-	//Utilizado para validação
-	// server.use('/api', auth.passport.authenticate('jwt', { session: false }), router);
-
-	// server.get('/:key/teste/zonadetestes/:codigo', teste.zonadetestes);
-
 	// // cliente
 	server.post('/:key/usuario', cliente.login);
 	server.post('/:key/cliente', cliente.novo);

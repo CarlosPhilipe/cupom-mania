@@ -35,11 +35,15 @@ module.exports = async function excluir(req, res) {
       ativo: false,
     },{
       where: {
+        ativo: true,
         idcupom: idcupom
       }
     }
   )
   .then(result => {
+    if (! result) {
+        res.send(`{"mensagem":"cupom já utilizado","tipo":"cupom_ja_utilizado"}`);
+    }
     res.send(`{"mensagem":"ok"}`);
   })
   .catch(error => {
